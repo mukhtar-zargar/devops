@@ -70,3 +70,13 @@ k8 create secrets from .env file
 """
 kubectl create secret generic ghost-secrets --from-env=.env
 """
+
+k8 edit secrets file
+"""
+kubectl edit secrets ghost-secrets
+"""
+
+k8 logs
+"""
+kubectl logs ghost-96bfd4497-696sd
+"""
