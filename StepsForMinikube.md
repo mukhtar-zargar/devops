@@ -1,3 +1,5 @@
+# K8 Minikube Steps
+
 - winget install minikube
 - minikube start --vm / minikube start --driver=docker/virtualbox
 - kubectl cluster-info

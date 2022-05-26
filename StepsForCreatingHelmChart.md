@@ -1,3 +1,5 @@
+# Steps for creating helm chart
+
 - helm create chart-name
 - important files/folder:
   - Chart.yaml: Chart description
