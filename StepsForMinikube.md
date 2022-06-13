@@ -10,7 +10,7 @@
 - minikube status
 - kubectl apply -f kube [kube- folder name where k8 config files reside]
 - kubectl get pods --watch
-- minikube tunnel []
-- kubectl get services [service name (optional)]
+- minikube tunnel [For accessing LoadBalancer service]
+- kubectl get services [service name (optional)] - [Get url of the service]
 - [OR] minikube service knote --url
 - kubectl delete -f kube [kube- folder name where k8 config files reside]
