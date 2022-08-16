@@ -41,3 +41,9 @@
   ```
 
   _--partition 0: (trick) only if consumer doesn't consume data properly_
+
+- Produce AVRO messages to kafka by passing an avro schema id
+
+  ```bash
+  kafka-avro-console-producer --broker-list host.docker.internal:9092 --topic integration-yara-digitalsolution-polaris --property schema.registry.url=host.docker.internal:8081 --property value.schema.id=13
+  ```

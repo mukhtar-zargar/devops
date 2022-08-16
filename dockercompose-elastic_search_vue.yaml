@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  elasticsearch:
+    image: elasticsearch:8.1.3
+    container_name: es
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - "http.cors.enabled=true"
+      - "http.cors.allow-origin=http://localhost:8082"
+      - xpack.security.enabled=false
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    restart: always
+  elasticvue:
+    image: cars10/elasticvue
+    ports:
+      - 8082:8080
+
+volumes:
+  es_data:

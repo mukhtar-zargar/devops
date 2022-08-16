@@ -1,0 +1,30 @@
+version: "3"
+services:
+  elastic:
+    image: elasticsearch:8.3.2
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - es-net
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - ELASTIC_PASSWORD=Tekken123
+      - http.cors.enabled=true
+      - http.cors.allow-origin="/.*/"
+      - http.cors.allow-credentials=true
+      - http.cors.allow-headers="X-Requested-With, Content-Type, Content-Length, Authorization"
+
+  kibana:
+    image: kibana:8.3.2
+    ports:
+      - 5601:5601
+    networks:
+      - es-net
+    depends_on:
+      - elastic
+
+networks:
+  es-net:
+    driver: bridge
