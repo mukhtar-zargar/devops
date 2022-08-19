@@ -45,5 +45,7 @@
 - Produce AVRO messages to kafka by passing an avro schema id
 
   ```bash
-  kafka-avro-console-producer --broker-list host.docker.internal:9092 --topic integration-yara-digitalsolution-polaris --property schema.registry.url=host.docker.internal:8081 --property value.schema.id=13
+  kafka-avro-console-producer --broker-list host.docker.internal:9092 --topic integration-yara-digitalsolution-polaris --property schema.registry.url=http://host.docker.internal:8081 --property value.schema.id=13
   ```
+
+  NOTE (Kafka-UI): For topic to choose a particular schema in simple steps, and produce AVRO messages in kafka-ui with simple json, you have to keep schema name exactly as topic name and at the end add "-value" to schema name for content and for key add "-key"
