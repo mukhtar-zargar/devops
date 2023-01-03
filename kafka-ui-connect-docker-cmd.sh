@@ -1,0 +1,11 @@
+docker run -p 8080:8080 \
+  -d provectuslabs/kafka-ui:latest \
+  -e KAFKA_CLUSTERS_0_NAME=integration \
+  -e KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=pkc-zpjg0.eu-central-1.aws.confluent.cloud:9092 \
+  -e KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL=SASL_SSL \
+  -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM=PLAIN \
+  -e KAFKA_CLUSTERS_0_ZOOKEEPER=pkc-zpjg0.eu-central-1.aws.confluent.cloud:2181 \
+  -e KAFKA_CLUSTERS_0_SCHEMAREGISTRY=https://psrc-1w11j.eu-central-1.aws.confluent.cloud \
+  -e KAFKA_CLUSTERS_0_SCHEMAREGISTRYAUTH_USERNAME=SCNR3WKC4INY6UP2 \
+  -e KAFKA_CLUSTERS_0_SCHEMAREGISTRYAUTH_PASSWORD=SXbkLbX8h1FBdkxeK8kXJ/b0VELuLbnzhrOCi1TSjnyZQDkUD5rgmukxI27UQZkc \
+  -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG=org.apache.kafka.common.security.scram.ScramLoginModule required username="ALTAUOLON3ZY3YTA" password="4YFfm4J5Vr0P1wHJ1/lJcmsoYhGKlfELoj68GllVtZx16Z7m8dlrBnLl6WR0w9ys";
